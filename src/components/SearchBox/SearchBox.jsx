@@ -1,10 +1,16 @@
 import React from 'react';
 import './SearchBox.css';
 
-export default function SearchBox() {
+const SearchBox = ({ onInputChange }) => {
     return (
         <div className="search-container">
-            <input placeholder="Type Keywords" className="search-input" />
+            <input
+                onChange={(event) => onInputChange(event.target.value)}
+                placeholder="Type keywords"
+                className="search-input"
+            />
         </div>
     );
-}
+};
+
+export default SearchBox;
